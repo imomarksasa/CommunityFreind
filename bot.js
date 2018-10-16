@@ -209,10 +209,10 @@ client.on("message", message => {
     if (command === prefix + "mute") {
           if (!message.member.hasPermission('MANAGE_ROLES')) return message.reply("**⚠ | `[MANAGE_ROLES]`لا يوجد لديك صلاحية**").catch(console.error);
     let user = message.mentions.users.first();
-    let modlog = client.channels.find('name', 'log');
+    let modlog = client.channels.find('name', 'Muted');
     let muteRole = client.guilds.get(message.guild.id).roles.find('name', 'Muted');
     if (!muteRole) return message.reply("**`'Muted'`لا توجد رتبة** \n Muted سوي رتبة ").catch(console.error);
-    if (message.mentions.users.size < 1) return message.reply('**.mute <منشن الشخص> **').catch(console.error);
+    if (message.mentions.users.size < 1) return message.reply('***mute <منشن الشخص> **').catch(console.error);
    
     const embed = new Discord.RichEmbed()
       .setColor(0x00AE86)
@@ -241,10 +241,10 @@ client.on("message", message => {
     if (command === prefix + "unmute") {
           if (!message.member.hasPermission('MANAGE_ROLES')) return message.reply("**⚠ | `[MANAGE_ROLES]`لا يوجد لديك صلاحية**").catch(console.error);
     let user = message.mentions.users.first();
-    let modlog = client.channels.find('name', 'log');
+    let modlog = client.channels.find('name', 'Muted');
     let muteRole = client.guilds.get(message.guild.id).roles.find('name', 'Muted');
     if (!muteRole) return message.reply("**⚠ | `[MUTE_ROLES]`لا يوجد لديك صلاحية**").catch(console.error);
-    if (message.mentions.users.size < 1) return message.reply('**.unmute <منشن الشخص>**').catch(console.error);
+    if (message.mentions.users.size < 1) return message.reply('***unmute <منشن الشخص>**').catch(console.error);
     const embed = new Discord.RichEmbed()
       .setColor(0x00AE86)
       .setTimestamp()
