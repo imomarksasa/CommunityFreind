@@ -11,48 +11,9 @@ client.on('message', message => {
   	}
 });
 
-client.on('message', ( message ) => {
-  if(message.author.bot) return;
 
-  if(message.channel.id !== '501047107193405450') return;
-
-  let types = [
-    '*',
-    '#credit',
-    'png',
-    'gif',
-    'mp4',
-    'avi',
-    'mkv',
-    'mpeg'
-  ]
-
-  if (message.attachments.size <= 0) {
-    message.delete();
-    message.channel.send(`${message.author}, هذا الروم مخصص للاوامر فقط`)
-    .then(msg => {
-      setTimeout(() => {
-        msg.delete();
-      }, 5000)
-  })
-  return;
-}
-
-  if(message.attachments.size >= 1) {
-    let filename = message.attachments.first().filename
-    console.log(filename);
-    if(!types.some( type => filename.endsWith(type) )) {
-      message.delete();
-      message.channel.send(`${message.author}, هذا الروم مخصص للاوامر فقط`)
-      .then(msg => {
-        setTimeout(() => {
-          msg.delete();
-        }, 5000)
-      })
-    }
-  }
-
-})
+  
+      
 
 client.on('message',async message => {
     if(message.content.startsWith(prefix + "setVoice")) {
