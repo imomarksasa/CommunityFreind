@@ -18,7 +18,7 @@ client.on('message', ( message ) => {
 
   let types = [
     '*',
-    '#',
+    '#credit',
     'png',
     'gif',
     'mp4',
