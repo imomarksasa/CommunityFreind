@@ -17,8 +17,8 @@ client.on('message', ( message ) => {
   if(message.channel.id !== '501047107193405450') return;
 
   let types = [
-    'sugg',
-    'jpeg',
+    '*',
+    '#',
     'png',
     'gif',
     'mp4',
@@ -29,7 +29,7 @@ client.on('message', ( message ) => {
 
   if (message.attachments.size <= 0) {
     message.delete();
-    message.channel.send(`${message.author}, هذا الروم مخصص للاقتراحات فقط`)
+    message.channel.send(`${message.author}, هذا الروم مخصص للاوامر فقط`)
     .then(msg => {
       setTimeout(() => {
         msg.delete();
@@ -43,7 +43,7 @@ client.on('message', ( message ) => {
     console.log(filename);
     if(!types.some( type => filename.endsWith(type) )) {
       message.delete();
-      message.channel.send(`${message.author}, هذا الروم مخصص للاقتراحات فقط`)
+      message.channel.send(`${message.author}, هذا الروم مخصص للاوامر فقط`)
       .then(msg => {
         setTimeout(() => {
           msg.delete();
